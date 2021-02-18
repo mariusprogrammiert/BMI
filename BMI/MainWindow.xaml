@@ -1,0 +1,31 @@
+﻿<Window x:Class="BMI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="BMI berechnen" Height="200" Width="330" ResizeMode="NoResize"
+        FocusManager.FocusedElement="{Binding ElementName=textboxSize}" Icon="Icon.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Right">Größe (cm)</Label>
+        <TextBox Grid.Column="1" Grid.Row="0" Name="textboxSize" PreviewTextInput="TextBoxInputValidation" KeyDown="TextBoxKeyDown"></TextBox>
+
+        <Label Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Right">Gewicht (kg)</Label>
+        <TextBox Grid.Column="1" Grid.Row="1" Name="textboxWeight" PreviewTextInput="TextBoxInputValidation" KeyDown="TextBoxKeyDown"></TextBox>
+
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Name="buttonCalculate" Click="ButtonCalculate_Click">berechnen</Button>
+
+        <Label Grid.Row="3" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontWeight="DemiBold" Name="labelResult">...</Label>
+    </Grid>
+</Window>
